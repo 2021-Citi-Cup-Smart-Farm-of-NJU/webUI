@@ -136,14 +136,14 @@
   .el-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
   }
-
-  .el-row {
+  .el-row
+   {
     margin-bottom: 20px;
 
-    &:last-child {
-      margin-bottom: 0;
-    }
   }
+  .el-row:last-child {
+     margin-bottom: 0;
+   }
 
   img {
     /*设置图片宽度和浏览器宽度一致*/

@@ -3,6 +3,12 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Home from '@/views/Home'
 import Login from '@/views/Login'
+import AdminMain from "../views/Insurance/admin/AdminMain";
+import EnterpriseMain from "../views/Insurance/enterprise/EnterpriseMain";
+import Publicity from "../views/Insurance/admin/Publicity";
+import Enterprise from "../views/Insurance/admin/Enterprise";
+import Points from "../views/Insurance/enterprise/Points";
+import Insurance from "../views/Insurance/enterprise/Insurance";
 
 Vue.use(Router)
 
@@ -19,7 +25,38 @@ export default new Router({
       path: '/Login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/admin',
+      name: 'AdminMain',
+      component: AdminMain,
+      children: [
+        {
+          path:'/admin/publicity',
+          component:Publicity
+        },
+        {
+          path:'/admin/enterprise',
+          component:Enterprise
+        },
+        ]
+    },
+    {
+      path: '/enterprise',
+      name: 'enterprise',
+      component: EnterpriseMain,
+      children: [
+        {
+          path:'/enterprise/insurance',
+          component:Insurance
+        },
+        {
+          path:'/enterprise/points',
+          component:Points
+        },
+      ]
     }
-    
+
+
   ]
 })
