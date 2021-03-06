@@ -9,6 +9,9 @@ import Publicity from "../views/Insurance/admin/Publicity";
 import Enterprise from "../views/Insurance/admin/Enterprise";
 import Points from "../views/Insurance/enterprise/Points";
 import Insurance from "../views/Insurance/enterprise/Insurance";
+import VillagersMain from "../views/Insurance/villagers/VillagersMain";
+import Transact from "../views/Insurance/villagers/Transact";
+import Query from "../views/Insurance/villagers/Query";
 
 Vue.use(Router)
 
@@ -53,6 +56,19 @@ export default new Router({
         {
           path:'/enterprise/points',
           component:Points
+        },
+    {
+      path: '/villagers',
+      name: 'villagers',
+      component:VillagersMain,
+      children: [
+        {
+          path:'/villagers/Transact',
+          component:Transcat
+        },
+        {
+          path:'/villagers/Query',
+          component:Query
         },
       ]
     }
