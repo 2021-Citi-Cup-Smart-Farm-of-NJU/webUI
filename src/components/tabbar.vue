@@ -75,6 +75,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  z-index: 1000;
+  background-color: white;
 
 }
 i{

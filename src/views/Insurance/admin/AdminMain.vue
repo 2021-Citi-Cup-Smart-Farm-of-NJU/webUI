@@ -1,19 +1,19 @@
 <template>
     <div class="container">
         <div class="title">农业保险</div>
-<!--        <div class="swiper">-->
-<!--          <el-carousel :interval="5000" arrow="always" height="300px">-->
-<!--            <el-carousel-item v-for="(item,index) in swipers" :key="index">-->
-<!--              <img src="@/assets/cards/card1.png">-->
-<!--            </el-carousel-item>-->
-<!--          </el-carousel>-->
-<!--        </div>-->
+        <div class="swiper">
+          <el-carousel :interval="5000" arrow="always" height="300px">
+            <el-carousel-item v-for="(item,index) in swipers" :key="index">
+              <img src="@/assets/cards/card1.png">
+            </el-carousel-item>
+          </el-carousel>
+        </div>
         <div class="content">
             <div class="box">
               <div class="box-title">
                 <span>合作单位&nbsp;&nbsp;</span>
-                <span class="detail">详情</span>
-                <i></i>
+                <span class="detail">详情<i class="iconfont icon-xiangqing" style="font-size: 10px"></i></span>
+
               </div>
               <div class="box-content">
                 <div class="box-card enterprise-card"  v-for="(item,index) in enterprises" :key="index">
@@ -24,8 +24,7 @@
           <div class="box">
             <div class="box-title">
               <span>保险宣传&nbsp;&nbsp;</span>
-              <span class="detail">详情</span>
-              <i></i>
+              <span class="detail">详情<i class="iconfont icon-xiangqing" style="font-size: 10px"></i></span>
             </div>
             <div class="box-content">
               <div class="box-card publicity-card"  v-for="(item,index) in enterprises" :key="index">
@@ -109,6 +108,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    margin-bottom: 70px;
   }
   .title{
       height: 30px;
@@ -145,8 +145,10 @@
       width: 100%;
       text-align: center;
       line-height: 50px;
+    color: white;
     background-color: blueviolet;
     border-radius: 5px 5px;
+    box-shadow: #bfbfbf 2px 2px 2px 2px;
   }
   img{
       height: 300px;
