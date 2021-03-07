@@ -50,14 +50,26 @@
             // },
         },
         methods: {
+            jump(path){
+            this.$router.push({path:path})
+            },
+
             enter(index){
                 this.currentIndex=index
                 switch (index) {
                     case 0:
+                        jump('')
                         break
                     case 1:
+                        jump('')
                         break
                     case 2:
+                        jump('')
+                        break
+                    case 3:
+                        jump('VillagersMain')
+                        break
+                    default:
                         break
                 }
             }
@@ -75,8 +87,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  z-index: 1000;
-  background-color: white;
 
 }
 i{
