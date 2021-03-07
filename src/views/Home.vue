@@ -22,7 +22,7 @@
               <div style="padding: 14px;">
                 <span>小额贷款</span>
                 <div class="bottom clearfix">
-                  <el-button type="text" class="button">操作按钮</el-button>
+                  <el-button type="text" class="button" @click="jump('/Home')">操作按钮</el-button>
                 </div>
               </div>
             </el-card>
@@ -36,7 +36,7 @@
               <div style="padding: 14px;">
                 <span>小额贷款</span>
                 <div class="bottom clearfix">
-                  <el-button type="text" class="button">操作按钮</el-button>
+                  <el-button type="text" class="button" @click="jump('/Home')">操作按钮</el-button>
                 </div>
               </div>
             </el-card>
@@ -104,6 +104,9 @@
       },
       handleClick(tab, event) {
         console.log(tab, event);
+      },
+      jump (path) {
+        this.$router.push({path:path})
       }
     },
     mounted() {
