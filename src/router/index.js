@@ -50,29 +50,31 @@ export default new Router({
       component: EnterpriseMain,
       children: [
         {
-          path:'/enterprise/insurance',
-          component:Insurance
+          path: '/enterprise/insurance',
+          component: Insurance
         },
         {
-          path:'/enterprise/points',
-          component:Points
+          path: '/enterprise/points',
+          component: Points
         },
+
+
+      ]
+    },
     {
       path: '/villagers',
       name: 'villagers',
-      component:VillagersMain,
+      component: VillagersMain,
       children: [
         {
-          path:'/villagers/Transact',
-          component:Transcat
+          path: '/villagers/Transact',
+          component: Transact
         },
         {
-          path:'/villagers/Query',
-          component:Query
+          path: '/villagers/Query',
+          component: Query
         },
       ]
-    }
-
-
-  ]
+    },
+    ]
 })
