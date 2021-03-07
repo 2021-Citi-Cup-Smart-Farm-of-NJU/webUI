@@ -12,11 +12,19 @@ import Insurance from "../views/Insurance/enterprise/Insurance";
 import VillagersMain from "../views/Insurance/villagers/VillagersMain";
 import Transact from "../views/Insurance/villagers/Transact";
 import Query from "../views/Insurance/villagers/Query";
+import Claims from "../views/Insurance/villagers/Claims";
+import Results from "../views/Insurance/villagers/Results";
+import ClaimsProcess from "../views/Insurance/villagers/ClaimsProcess";
+import Process from "../views/Insurance/villagers/Process";
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path:'/',
+      redirect:'/home'
+    },
     {
       // 首页
       path: '/home',
@@ -30,51 +38,63 @@ export default new Router({
       component: Login
     },
     {
-      path: '/admin',
+      path: '/admin/main',
       name: 'AdminMain',
       component: AdminMain,
-      children: [
-        {
-          path:'/admin/publicity',
-          component:Publicity
-        },
-        {
-          path:'/admin/enterprise',
-          component:Enterprise
-        },
-        ]
     },
     {
-      path: '/enterprise',
-      name: 'enterprise',
+      path:'/admin/publicity',
+      name:'Publicity',
+      component:Publicity
+    },
+    {
+      path:'/admin/enterprise',
+      name:'Enterprise',
+      component:Enterprise
+    },
+    {
+      path: '/enterprise/main',
+      name: 'EnterpriseMain',
       component: EnterpriseMain,
-      children: [
-        {
-          path: '/enterprise/insurance',
-          component: Insurance
-        },
-        {
-          path: '/enterprise/points',
-          component: Points
-        },
-
-
-      ]
     },
     {
-      path: '/villagers',
+      path: '/enterprise/insurance',
+      name: 'Insurance',
+      component: Insurance
+    },
+    {
+      path: '/enterprise/points',
+      name:'Points',
+      component: Points
+    },
+    {
+      path: '/villagers/main',
       name: 'villagers',
       component: VillagersMain,
-      children: [
-        {
-          path: '/villagers/Transact',
-          component: Transact
-        },
-        {
-          path: '/villagers/Query',
-          component: Query
-        },
-      ]
+    },
+    {
+      path: '/villagers/transact',
+      component: Transact
+    },
+    {
+      path: '/villagers/query',
+      component: Query
+    },
+    {
+      path: '/villagers/claims',
+      component: Claims
+    },
+    {
+      path: '/villagers/process',
+      component: Process
+    },
+    {
+      path: '/villagers/results',
+      component: Results
+    },
+    {
+      path: '/villagers/claimsprocess',
+      component: ClaimsProcess
     },
     ]
 })

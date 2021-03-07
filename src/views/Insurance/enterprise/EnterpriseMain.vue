@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <div class="title">农业保险</div>
-    <div class="swiper">
-      <el-carousel :interval="5000" arrow="always" height="300px">
+    <div class="el-carousel swiper">
+      <el-carousel :interval="5000" arrow="always">
         <el-carousel-item v-for="(item,index) in swipers" :key="index">
-          <img src="@/assets/cards/card1.png">
+          <img src="@/assets/cards/card2.png" alt/>
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -12,7 +12,7 @@
       <div class="box">
         <div class="box-title">
           <span>积分与排名&nbsp;&nbsp;</span>
-          <span class="detail">详情<i class="iconfont icon-xiangqing" style="font-size: 10px"></i></span>
+          <span class="detail" @click="pointsDetail">详情<i class="iconfont icon-xiangqing" style="font-size: 10px"></i></span>
 
         </div>
         <div class="box-content">
@@ -24,7 +24,7 @@
       <div class="box">
         <div class="box-title">
           <span>发布的保险&nbsp;&nbsp;</span>
-          <span class="detail">详情<i class="iconfont icon-xiangqing" style="font-size: 10px"></i></span>
+          <span class="detail" @click="insuranceDetail">详情<i class="iconfont icon-xiangqing" style="font-size: 10px"></i></span>
         </div>
         <div class="box-content">
           <div class="box-card publicity-card"  v-for="(item,index) in enterprises" :key="index">
@@ -96,7 +96,12 @@
 
         },
         methods: {
-
+            pointsDetail(){
+                this.$router.push('/enterprise/points')
+            },
+            insuranceDetail(){
+                this.$router.push('/enterprise/insurance')
+            }
         }
     }
 </script>
@@ -111,11 +116,17 @@
     margin-bottom: 70px;
   }
   .title{
-    height: 30px;
+    height: 50px;
     width: 100%;
-    line-height: 30px;
+    line-height: 50px;
     text-align: center;
     background-color: #d3dce6;
+    font-size: 27px;
+    font-weight: bold;
+  }
+  .swiper{
+    width:100%;
+    height:300px;
   }
   .content{
     width: 100%;
@@ -133,6 +144,7 @@
   }
   .box-title .detail{
     font-weight: bold;
+    cursor: pointer;
   }
   .box-content{
     display: flex;

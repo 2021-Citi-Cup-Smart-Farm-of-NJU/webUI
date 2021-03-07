@@ -2,7 +2,7 @@
   <div class="container">
     <div class="title">
       <div class="title-back" @click="back()"><i class="iconfont icon-fanhui"></i>返回</div>
-      <span>发布的保险</span>
+      <span>承保结果</span>
     </div>
     <div class="sousuo">
       <div class="search">
@@ -15,11 +15,7 @@
       </div>
     </div>
     <div class="content">
-      <div class="my-content">
-        <div class="my-item" @click="currentIndex=1" :class="currentIndex==1?'action':''">生效中</div>
-        <div class="my-item" @click="currentIndex=2" :class="currentIndex==2?'action':''">审核中</div>
-      </div>
-      <div class="box-card" v-if="currentIndex==1"  v-for="(item,index) in enterprises" :key="index">
+      <div class="box-card"  v-for="(item,index) in enterprises" :key="index">
         <div class="card-title">
           <div class="card-avatar"><img src="@/assets/cards/card2.png"></div>
 
@@ -28,7 +24,7 @@
             <span style="font-weight: lighter">{{item.time}}</span>
           </div>
           <div class="card-right">
-            <div class="card-button">删除</div>
+            <div class="card-button">详情</div>
             <i class="iconfont icon-gengduo"></i>
           </div>
         </div>
@@ -43,14 +39,13 @@
 <script>
     import tabbar from "../../../components/tabbar";
     export default {
-        name: "Process",
+        name: "Results",
         components: {
             tabbar
         },
         data () {
             return {
                 input:"",
-                currentIndex:1,
                 enterprises:[
                     {
                         index:0,
@@ -197,27 +192,6 @@
     align-items: center;
     flex-direction: column;
   }
-  .my-content{
-    margin: 30px;
-    width: 40%;
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-  }
-  .my-item{
-    width: 50%;
-    height: 100%;
-    text-align: center;
-    line-height: 100px;
-    color: #0097ff;
-    font-size: 30px;
-    display: inline-block;
-    background-color: honeydew;
-  }
-  .action{
-    background-color: #0097ff;
-    color: white;
-  }
   .box-card{
     margin-top: 60px;
     height: 180px;
@@ -233,9 +207,9 @@
     justify-content: space-around;
 
   }
-  /*.box-card::first-child{*/
-  /*  margin-top: 20px;*/
-  /*}*/
+  .box-card:first-child{
+    margin-top: 90px;
+  }
   .card-title{
     height: 40%;
     width: 93%;
